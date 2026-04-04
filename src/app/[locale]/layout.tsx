@@ -4,10 +4,13 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/lib/config";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 import Sidebar from "@/components/layout/Sidebar";
 import TopBar from "@/components/layout/TopBar";
 import RightPanel from "@/components/layout/RightPanel";
 import MobileNav from "@/components/layout/MobileNav";
+import StickyButtons from "@/components/ui/StickyButtons";
+import LeadPopup from "@/components/ui/LeadPopup";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -66,6 +69,14 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className="h-full antialiased">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([organizationSchema(), websiteSchema()]),
+          }}
+        />
+      </head>
       <body className="h-full">
         <NextIntlClientProvider messages={messages}>
           {/* Desktop Layout */}
@@ -79,6 +90,9 @@ export default async function LocaleLayout({
               </div>
             </div>
           </div>
+
+          <StickyButtons />
+          <LeadPopup />
 
           {/* Mobile Layout */}
           <div className="lg:hidden flex flex-col min-h-screen">

@@ -13,6 +13,7 @@ import {
   BookOpen,
   ChevronLeft,
   Zap,
+  Wallet,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -22,6 +23,7 @@ const navItems = [
   { key: "makeMoney", href: "/make-money", icon: DollarSign },
   { key: "freelancing", href: "/freelancing", icon: Briefcase },
   { key: "remoteJobs", href: "/remote-jobs", icon: Globe },
+  { key: "paymentGuides", href: "/payment-guides", icon: Wallet },
   { key: "tools", href: "/tools", icon: Wrench },
   { key: "resources", href: "/resources", icon: BookOpen },
 ];

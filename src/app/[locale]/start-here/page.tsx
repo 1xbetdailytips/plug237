@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { CheckCircle, Circle, Clock, ArrowRight, Zap } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Start Here — From Zero to First Income Online",
+  description:
+    "Your step-by-step roadmap to earn your first money online from Cameroon. 6 actionable steps from digital identity to $100/month.",
+};
 
 const roadmapSteps = [
   {

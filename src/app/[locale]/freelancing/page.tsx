@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import {
   ArrowRight,
@@ -9,6 +10,12 @@ import {
   XCircle,
   Minus,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Freelancing in Cameroon — Platform Comparison & Skills Guide",
+  description:
+    "Compare Fiverr, Upwork, Freelancer, PeoplePerHour for Cameroonians. In-demand skills, earnings potential, and payment methods that work.",
+};
 
 const platforms = [
   {
