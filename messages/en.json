@@ -1,0 +1,122 @@
+{
+  "nav": {
+    "home": "Dashboard",
+    "startHere": "Start Here",
+    "makeMoney": "Make Money",
+    "freelancing": "Freelancing",
+    "remoteJobs": "Remote Jobs",
+    "tools": "Tools",
+    "resources": "Resources",
+    "search": "Search modules...",
+    "language": "Language"
+  },
+  "home": {
+    "welcome": "Your Money-Making System",
+    "subtitle": "Step-by-step methods to earn online from Cameroon. No fluff. Just action.",
+    "quickStart": "Quick Start",
+    "quickStartDesc": "New here? Start with the roadmap.",
+    "trending": "Trending Methods",
+    "trendingDesc": "What's working right now in 2026.",
+    "stats": "Community Stats",
+    "activeUsers": "Active Members",
+    "methodsTested": "Methods Tested",
+    "avgEarnings": "Avg. First Month",
+    "successRate": "Success Rate",
+    "featuredModule": "Featured Module",
+    "viewAll": "View All",
+    "getStarted": "Get Started",
+    "latestModules": "Latest Modules",
+    "topMethods": "Top Methods Right Now"
+  },
+  "startHere": {
+    "title": "Start Here",
+    "subtitle": "Your roadmap from zero to your first income online.",
+    "step": "Step",
+    "roadmap": "Your Roadmap",
+    "timeToComplete": "Time to complete",
+    "difficulty": "Difficulty",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "minutes": "min",
+    "completed": "Completed",
+    "startModule": "Start Module",
+    "continueModule": "Continue"
+  },
+  "makeMoney": {
+    "title": "Make Money Methods",
+    "subtitle": "Proven ways to earn online from Cameroon. Each method includes step-by-step instructions.",
+    "filter": "Filter by",
+    "all": "All",
+    "phone": "Phone Only",
+    "laptop": "Laptop",
+    "noSkills": "No Skills Needed",
+    "earnings": "Potential Earnings",
+    "difficulty": "Difficulty",
+    "timeToStart": "Time to Start",
+    "requirements": "Requirements",
+    "startGuide": "Start Guide"
+  },
+  "freelancing": {
+    "title": "Freelancing Hub",
+    "subtitle": "Build a freelancing career from Cameroon. Platform guides, skill roadmaps, and client-getting strategies.",
+    "platforms": "Platform Comparison",
+    "skills": "In-Demand Skills",
+    "gettingStarted": "Getting Started",
+    "earnings": "Earnings Potential",
+    "compare": "Compare Platforms"
+  },
+  "remoteJobs": {
+    "title": "Remote Jobs",
+    "subtitle": "Find legitimate remote jobs hiring from Cameroon. Updated regularly.",
+    "latest": "Latest Opportunities",
+    "filterSkill": "Filter by skill",
+    "filterLevel": "Filter by level",
+    "apply": "Apply Now",
+    "posted": "Posted",
+    "salary": "Salary Range",
+    "type": "Job Type",
+    "noJobs": "No jobs match your filters."
+  },
+  "tools": {
+    "title": "Tools & Calculators",
+    "subtitle": "Free tools to plan, track, and grow your online income.",
+    "earningsCalc": "Earnings Calculator",
+    "platformFinder": "Platform Finder",
+    "skillAssessment": "Skill Assessment",
+    "incomeTracker": "Income Tracker"
+  },
+  "resources": {
+    "title": "Resources",
+    "subtitle": "Curated guides, templates, and downloads to accelerate your journey.",
+    "downloads": "Free Downloads",
+    "guides": "Step-by-Step Guides",
+    "templates": "Templates",
+    "communities": "Communities"
+  },
+  "cta": {
+    "joinCommunity": "Join Our Community",
+    "joinDesc": "Get updates, tips, and connect with other hustlers in Cameroon.",
+    "telegram": "Join Telegram",
+    "whatsapp": "Join WhatsApp",
+    "downloadGuide": "Download Free Guide",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Get Access",
+    "subscribing": "Subscribing..."
+  },
+  "common": {
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "share": "Share",
+    "save": "Save",
+    "free": "FREE",
+    "new": "NEW",
+    "popular": "POPULAR",
+    "updated": "UPDATED",
+    "perMonth": "/month",
+    "loading": "Loading..."
+  }
+}

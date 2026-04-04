@@ -1,0 +1,122 @@
+{
+  "nav": {
+    "home": "Tableau de Bord",
+    "startHere": "Commencer Ici",
+    "makeMoney": "Gagner de l'Argent",
+    "freelancing": "Freelance",
+    "remoteJobs": "Emplois en Ligne",
+    "tools": "Outils",
+    "resources": "Ressources",
+    "search": "Rechercher...",
+    "language": "Langue"
+  },
+  "home": {
+    "welcome": "Ton Systeme pour Gagner",
+    "subtitle": "Des methodes etape par etape pour gagner en ligne depuis le Cameroun. Pas de blabla. Que de l'action.",
+    "quickStart": "Demarrage Rapide",
+    "quickStartDesc": "Nouveau ici ? Commence par la feuille de route.",
+    "trending": "Methodes Tendance",
+    "trendingDesc": "Ce qui marche en ce moment en 2026.",
+    "stats": "Stats Communaute",
+    "activeUsers": "Membres Actifs",
+    "methodsTested": "Methodes Testees",
+    "avgEarnings": "Moy. 1er Mois",
+    "successRate": "Taux de Reussite",
+    "featuredModule": "Module en Vedette",
+    "viewAll": "Voir Tout",
+    "getStarted": "Commencer",
+    "latestModules": "Derniers Modules",
+    "topMethods": "Top Methodes du Moment"
+  },
+  "startHere": {
+    "title": "Commencer Ici",
+    "subtitle": "Ta feuille de route de zero a tes premiers revenus en ligne.",
+    "step": "Etape",
+    "roadmap": "Ta Feuille de Route",
+    "timeToComplete": "Temps necessaire",
+    "difficulty": "Difficulte",
+    "beginner": "Debutant",
+    "intermediate": "Intermediaire",
+    "advanced": "Avance",
+    "minutes": "min",
+    "completed": "Termine",
+    "startModule": "Commencer",
+    "continueModule": "Continuer"
+  },
+  "makeMoney": {
+    "title": "Methodes pour Gagner",
+    "subtitle": "Des methodes prouvees pour gagner en ligne depuis le Cameroun. Chaque methode inclut des instructions detaillees.",
+    "filter": "Filtrer par",
+    "all": "Tout",
+    "phone": "Telephone Seul",
+    "laptop": "Ordinateur",
+    "noSkills": "Sans Competences",
+    "earnings": "Revenus Potentiels",
+    "difficulty": "Difficulte",
+    "timeToStart": "Temps de Demarrage",
+    "requirements": "Prerequis",
+    "startGuide": "Commencer le Guide"
+  },
+  "freelancing": {
+    "title": "Hub Freelance",
+    "subtitle": "Construis une carriere freelance depuis le Cameroun. Guides de plateformes et strategies pour trouver des clients.",
+    "platforms": "Comparaison des Plateformes",
+    "skills": "Competences Demandees",
+    "gettingStarted": "Pour Commencer",
+    "earnings": "Potentiel de Gains",
+    "compare": "Comparer les Plateformes"
+  },
+  "remoteJobs": {
+    "title": "Emplois en Ligne",
+    "subtitle": "Trouve des emplois a distance legitimes qui recrutent depuis le Cameroun. Mis a jour regulierement.",
+    "latest": "Dernieres Opportunites",
+    "filterSkill": "Filtrer par competence",
+    "filterLevel": "Filtrer par niveau",
+    "apply": "Postuler",
+    "posted": "Publie",
+    "salary": "Salaire",
+    "type": "Type d'Emploi",
+    "noJobs": "Aucun emploi ne correspond a tes filtres."
+  },
+  "tools": {
+    "title": "Outils & Calculatrices",
+    "subtitle": "Des outils gratuits pour planifier, suivre et augmenter tes revenus en ligne.",
+    "earningsCalc": "Calculateur de Revenus",
+    "platformFinder": "Trouveur de Plateforme",
+    "skillAssessment": "Evaluation de Competences",
+    "incomeTracker": "Suivi de Revenus"
+  },
+  "resources": {
+    "title": "Ressources",
+    "subtitle": "Guides selectionnes, modeles et telechargements pour accelerer ton parcours.",
+    "downloads": "Telechargements Gratuits",
+    "guides": "Guides Etape par Etape",
+    "templates": "Modeles",
+    "communities": "Communautes"
+  },
+  "cta": {
+    "joinCommunity": "Rejoins la Communaute",
+    "joinDesc": "Recois des mises a jour, des conseils et connecte-toi avec d'autres hustlers au Cameroun.",
+    "telegram": "Rejoindre Telegram",
+    "whatsapp": "Rejoindre WhatsApp",
+    "downloadGuide": "Telecharger le Guide Gratuit",
+    "emailPlaceholder": "Ton adresse email",
+    "subscribe": "Obtenir l'Acces",
+    "subscribing": "Inscription..."
+  },
+  "common": {
+    "readMore": "Lire Plus",
+    "viewAll": "Voir Tout",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Precedent",
+    "share": "Partager",
+    "save": "Sauvegarder",
+    "free": "GRATUIT",
+    "new": "NOUVEAU",
+    "popular": "POPULAIRE",
+    "updated": "MIS A JOUR",
+    "perMonth": "/mois",
+    "loading": "Chargement..."
+  }
+}
