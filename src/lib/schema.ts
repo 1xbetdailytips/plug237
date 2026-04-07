@@ -7,7 +7,7 @@ export function organizationSchema() {
     name: siteConfig.name,
     url: siteConfig.url,
     description: "Step-by-step platform to earn money online from Cameroon",
-    sameAs: [],
+    sameAs: ["https://t.me/weplug237"],
   };
 }
 
@@ -54,6 +54,38 @@ export function faqSchema(
         text: faq.answer,
       },
     })),
+  };
+}
+
+export function articleSchema(opts: {
+  title: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+  image?: string;
+  locale: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: opts.title,
+    description: opts.description,
+    url: opts.url,
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified || opts.datePublished,
+    image: opts.image || `${siteConfig.url}/og/default.png`,
+    inLanguage: opts.locale === "fr" ? "fr-CM" : "en-CM",
+    author: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
   };
 }
 

@@ -5,17 +5,17 @@ import { CheckCircle, Circle, Clock, ArrowRight, Zap } from "lucide-react";
 export const metadata: Metadata = {
   title: "Start Here — From Zero to First Income Online",
   description:
-    "Your step-by-step roadmap to earn your first money online from Cameroon. 6 actionable steps from digital identity to $100/month.",
+    "Your step-by-step roadmap to earn your first money online from Cameroon. 6 actionable steps from digital identity to 65,000 FCFA/month.",
 };
 
 const roadmapSteps = [
   {
     title: "Set Up Your Digital Identity",
-    description: "Create accounts on key platforms. Set up a professional email, payment methods (MTN MoMo, Orange Money, PayPal), and your first online profiles.",
+    description: "Create accounts on key platforms. Set up a professional email, payment methods (MTN MoMo, Orange Money, Payoneer), and your first online profiles.",
     time: "30 min",
     difficulty: "Beginner",
     status: "active",
-    substeps: ["Create Gmail account", "Set up MTN MoMo", "Create PayPal (if possible)", "Set up Wise account"],
+    substeps: ["Create Gmail account", "Set up MTN MoMo", "Create Payoneer account", "Set up Binance P2P for crypto-to-MoMo"],
   },
   {
     title: "Choose Your Money Path",
@@ -42,7 +42,7 @@ const roadmapSteps = [
     substeps: ["Apply to 10+ opportunities", "Send 5+ proposals/pitches", "Follow up consistently"],
   },
   {
-    title: "Scale to $100/month",
+    title: "Scale to 65,000 FCFA/month",
     description: "Optimize your workflow, increase your rates, and build a consistent income stream.",
     time: "2-4 weeks",
     difficulty: "Intermediate",

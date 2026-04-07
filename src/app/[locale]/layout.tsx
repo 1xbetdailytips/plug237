@@ -10,6 +10,7 @@ import TopBar from "@/components/layout/TopBar";
 import RightPanel from "@/components/layout/RightPanel";
 import MobileNav from "@/components/layout/MobileNav";
 import StickyButtons from "@/components/ui/StickyButtons";
+import Footer from "@/components/layout/Footer";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -84,7 +85,10 @@ export default async function LocaleLayout({
             <div className="flex flex-col flex-1 ml-[220px]">
               <TopBar locale={locale} />
               <div className="flex flex-1 overflow-hidden">
-                <main className="flex-1 overflow-y-auto p-6">{children}</main>
+                <main className="flex-1 overflow-y-auto p-6">
+                  {children}
+                  <Footer locale={locale} />
+                </main>
                 <RightPanel />
               </div>
             </div>
@@ -97,6 +101,7 @@ export default async function LocaleLayout({
             <MobileNav locale={locale} />
             <main className="flex-1 pt-[52px] pb-[56px] overflow-y-auto p-4">
               {children}
+              <Footer locale={locale} />
             </main>
           </div>
         </NextIntlClientProvider>

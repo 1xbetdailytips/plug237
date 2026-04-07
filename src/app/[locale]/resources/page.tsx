@@ -11,31 +11,31 @@ import {
 
 const downloads = [
   {
-    title: "First $100 Online from Cameroon",
+    title: "First 65,000 FCFA Online from Cameroon",
     format: "PDF Guide",
     pages: "24 pages",
-    description: "Complete step-by-step guide from zero to your first $100 earned online.",
+    description: "Step-by-step guide covering account setup (Payoneer, Binance P2P, MoMo), platform registration, and landing your first paying gig.",
     popular: true,
   },
   {
     title: "Freelancing Profile Templates",
     format: "PDF + Docs",
     pages: "12 templates",
-    description: "Copy-paste templates for Fiverr, Upwork, and PeoplePerHour profiles.",
+    description: "Ready-to-use bio, description, and portfolio templates optimized for Fiverr, Upwork, and PeoplePerHour — tailored for Cameroonian freelancers.",
     popular: true,
   },
   {
-    title: "MTN MoMo International Payment Guide",
+    title: "Cameroon International Payment Guide",
     format: "PDF",
     pages: "8 pages",
-    description: "How to receive international payments in Cameroon via MoMo, Orange Money, Payoneer.",
+    description: "How to receive freelance payments in Cameroon: Payoneer to bank transfer, Binance P2P crypto-to-MoMo, and direct wire options compared.",
     popular: false,
   },
   {
     title: "Client Proposal Templates",
     format: "Google Docs",
     pages: "6 templates",
-    description: "Professional proposal templates to win freelancing contracts.",
+    description: "Professional proposal and pitch templates with proven structures to win freelancing contracts on international platforms.",
     popular: false,
   },
 ];
@@ -43,24 +43,10 @@ const downloads = [
 const communities = [
   {
     name: "PLUG237 Telegram",
-    members: "800+",
+    members: "Growing",
     description: "Main community for tips, job alerts, and support.",
     platform: "Telegram",
-    url: "#",
-  },
-  {
-    name: "PLUG237 WhatsApp",
-    members: "500+",
-    description: "Daily money-making tips and quick Q&A.",
-    platform: "WhatsApp",
-    url: "#",
-  },
-  {
-    name: "Cameroon Freelancers",
-    members: "2,000+",
-    description: "Facebook group for Cameroonian freelancers and remote workers.",
-    platform: "Facebook",
-    url: "#",
+    url: "https://t.me/weplug237",
   },
 ];
 
@@ -136,7 +122,7 @@ export default function ResourcesPage() {
                   </div>
                   <p className="text-[11px] text-text-dim mt-0.5">{c.description}</p>
                   <span className="text-[10px] text-text-dim mt-1 flex items-center gap-1">
-                    <Users className="w-3 h-3" /> {c.members} members
+                    <Users className="w-3 h-3" /> {c.members} community
                   </span>
                 </div>
                 <a

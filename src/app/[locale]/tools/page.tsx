@@ -5,10 +5,8 @@ import {
   Calculator,
   Search,
   ClipboardCheck,
-  BarChart3,
   ArrowRight,
   Zap,
-  DollarSign,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -29,24 +27,20 @@ const toolCards = [
     bgColor: "bg-accent/10",
     status: "active",
   },
-  {
-    icon: BarChart3,
-    titleKey: "incomeTracker",
-    description: "Track your online earnings across platforms in one dashboard.",
-    color: "text-success",
-    bgColor: "bg-success/10",
-    status: "coming",
-  },
 ];
+
+const XAF_PER_USD = 650;
 
 export default function ToolsPage() {
   const t = useTranslations("tools");
   const [hours, setHours] = useState(4);
-  const [rate, setRate] = useState(8);
+  const [rate, setRate] = useState(2000);
   const [days, setDays] = useState(22);
 
-  const monthly = hours * rate * days;
-  const yearly = monthly * 12;
+  const monthlyFcfa = hours * rate * days;
+  const yearlyFcfa = monthlyFcfa * 12;
+  const monthlyUsd = Math.round(monthlyFcfa / XAF_PER_USD);
+  const yearlyUsd = Math.round(yearlyFcfa / XAF_PER_USD);
 
   return (
     <div className="max-w-4xl space-y-6">
@@ -80,17 +74,18 @@ export default function ToolsPage() {
             </div>
             <div>
               <label className="block text-[11px] font-medium text-text-dim mb-1.5">
-                Hourly rate (USD)
+                Hourly rate (FCFA)
               </label>
               <input
                 type="range"
-                min={2}
-                max={50}
+                min={500}
+                max={20000}
+                step={500}
                 value={rate}
                 onChange={(e) => setRate(Number(e.target.value))}
                 className="w-full accent-accent"
               />
-              <span className="text-[13px] font-semibold text-text">${rate}/hr</span>
+              <span className="text-[13px] font-semibold text-text">{rate.toLocaleString()} FCFA/hr</span>
             </div>
             <div>
               <label className="block text-[11px] font-medium text-text-dim mb-1.5">
@@ -112,19 +107,19 @@ export default function ToolsPage() {
             <div className="rounded-lg bg-bg-elevated border border-border p-4 text-center">
               <p className="text-[11px] text-text-dim mb-1">Monthly Earnings</p>
               <p className="text-2xl font-bold text-success">
-                ${monthly.toLocaleString()}
+                {monthlyFcfa.toLocaleString()} FCFA
               </p>
               <p className="text-[11px] text-text-dim mt-0.5">
-                ~{(monthly * 610).toLocaleString()} FCFA
+                ~${monthlyUsd.toLocaleString()} USD
               </p>
             </div>
             <div className="rounded-lg bg-bg-elevated border border-border p-4 text-center">
               <p className="text-[11px] text-text-dim mb-1">Yearly Earnings</p>
               <p className="text-2xl font-bold text-accent">
-                ${yearly.toLocaleString()}
+                {yearlyFcfa.toLocaleString()} FCFA
               </p>
               <p className="text-[11px] text-text-dim mt-0.5">
-                ~{(yearly * 610).toLocaleString()} FCFA
+                ~${yearlyUsd.toLocaleString()} USD
               </p>
             </div>
           </div>
@@ -132,7 +127,7 @@ export default function ToolsPage() {
       </div>
 
       {/* Tool Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {toolCards.map((tool, i) => {
           const Icon = tool.icon;
           return (
@@ -149,13 +144,9 @@ export default function ToolsPage() {
               <p className="text-[11px] text-text-dim mt-1 leading-relaxed">
                 {tool.description}
               </p>
-              {tool.status === "coming" ? (
-                <span className="badge bg-bg-elevated text-text-dim mt-3">COMING SOON</span>
-              ) : (
-                <button className="mt-3 inline-flex items-center gap-1 text-[11px] font-semibold text-accent hover:text-accent-hover transition-colors">
-                  Open Tool <ArrowRight className="w-3 h-3" />
-                </button>
-              )}
+              <button className="mt-3 inline-flex items-center gap-1 text-[11px] font-semibold text-accent hover:text-accent-hover transition-colors">
+                Open Tool <ArrowRight className="w-3 h-3" />
+              </button>
             </div>
           );
         })}

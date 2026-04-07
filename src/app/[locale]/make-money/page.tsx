@@ -12,9 +12,11 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 
 type Method = {
   title: string;
+  slug: string;
   description: string;
   earnings: string;
   difficulty: "Easy" | "Medium" | "Hard";
@@ -28,8 +30,9 @@ type Method = {
 const methods: Method[] = [
   {
     title: "WhatsApp Status Business",
+    slug: "whatsapp-status-business",
     description: "Sell products via WhatsApp Status. Use your existing contacts to start a micro-business with zero capital.",
-    earnings: "$50-300",
+    earnings: "32,500-195,000 FCFA (~$50-$300)",
     difficulty: "Easy",
     device: "phone",
     timeToStart: "1 day",
@@ -39,8 +42,9 @@ const methods: Method[] = [
   },
   {
     title: "TikTok Creativity Program",
+    slug: "tiktok-creativity-program",
     description: "Create short videos and earn from the TikTok Creativity Program. Works with a phone and free editing apps.",
-    earnings: "$200-1000",
+    earnings: "130,000-650,000 FCFA (~$200-$1,000)",
     difficulty: "Medium",
     device: "phone",
     timeToStart: "1 week",
@@ -50,8 +54,9 @@ const methods: Method[] = [
   },
   {
     title: "Fiverr Data Entry & Typing",
+    slug: "fiverr-data-entry",
     description: "Offer data entry, copy-paste, and typing services on Fiverr. No technical skills needed — just accuracy and speed.",
-    earnings: "$100-500",
+    earnings: "65,000-325,000 FCFA (~$100-$500)",
     difficulty: "Easy",
     device: "laptop",
     timeToStart: "2 days",
@@ -60,20 +65,34 @@ const methods: Method[] = [
     popular: true,
   },
   {
-    title: "Online Surveys (Prolific, Swagbucks)",
-    description: "Earn by taking surveys and completing tasks. Low pay per task but zero skills required.",
-    earnings: "$20-80",
+    title: "Remotasks Data Labeling",
+    slug: "remotasks-data-labeling",
+    description: "Label data for AI companies from your phone or laptop. Tasks include image tagging, text categorization, and content review. Pays via crypto (withdraw to MoMo via Binance P2P).",
+    earnings: "25,000-80,000 FCFA (~$38-$123)",
     difficulty: "Easy",
     device: "phone",
-    timeToStart: "30 min",
+    timeToStart: "1 day",
+    skills: false,
+    tag: "NEW",
+    popular: true,
+  },
+  {
+    title: "Online Tutoring (Preply/Cambly)",
+    slug: "online-tutoring",
+    description: "Teach English or French to international students via Preply or Cambly. Bilingual Cameroonians have a strong advantage. Set your own hours.",
+    earnings: "65,000-260,000 FCFA (~$100-$400)",
+    difficulty: "Medium",
+    device: "laptop",
+    timeToStart: "3 days",
     skills: false,
     tag: null,
-    popular: false,
+    popular: true,
   },
   {
     title: "Social Media Management",
+    slug: "social-media-management",
     description: "Manage social media accounts for small businesses. Post content, reply to comments, grow their following.",
-    earnings: "$200-600",
+    earnings: "130,000-390,000 FCFA (~$200-$600)",
     difficulty: "Medium",
     device: "both",
     timeToStart: "3 days",
@@ -83,8 +102,9 @@ const methods: Method[] = [
   },
   {
     title: "YouTube Faceless Channels",
+    slug: "youtube-faceless-channels",
     description: "Create YouTube channels using free stock footage and AI narration. Monetize through AdSense and affiliate links.",
-    earnings: "$100-2000",
+    earnings: "65,000-1,300,000 FCFA (~$100-$2,000)",
     difficulty: "Medium",
     device: "laptop",
     timeToStart: "1 week",
@@ -94,8 +114,9 @@ const methods: Method[] = [
   },
   {
     title: "Affiliate Marketing",
+    slug: "affiliate-marketing",
     description: "Promote products and earn commissions. Use social media, WhatsApp groups, or a blog to drive sales.",
-    earnings: "$50-500",
+    earnings: "32,500-325,000 FCFA (~$50-$500)",
     difficulty: "Medium",
     device: "both",
     timeToStart: "3 days",
@@ -105,8 +126,9 @@ const methods: Method[] = [
   },
   {
     title: "Transcription (Rev, GoTranscript)",
+    slug: "transcription",
     description: "Transcribe audio/video to text. English + French bilingual is a huge advantage in Cameroon.",
-    earnings: "$150-400",
+    earnings: "97,500-260,000 FCFA (~$150-$400)",
     difficulty: "Easy",
     device: "laptop",
     timeToStart: "2 days",
@@ -116,8 +138,9 @@ const methods: Method[] = [
   },
   {
     title: "Upwork Virtual Assistant",
+    slug: "upwork-virtual-assistant",
     description: "Help businesses with emails, scheduling, research, and admin tasks. Great for organized, detail-oriented people.",
-    earnings: "$300-800",
+    earnings: "195,000-520,000 FCFA (~$300-$800)",
     difficulty: "Medium",
     device: "laptop",
     timeToStart: "3 days",
@@ -127,8 +150,9 @@ const methods: Method[] = [
   },
   {
     title: "Canva Graphic Design",
+    slug: "canva-graphic-design",
     description: "Design social media posts, logos, and flyers using Canva. Free to learn, high demand from local businesses.",
-    earnings: "$100-400",
+    earnings: "65,000-260,000 FCFA (~$100-$400)",
     difficulty: "Easy",
     device: "both",
     timeToStart: "2 days",
@@ -142,6 +166,7 @@ type FilterType = "all" | "phone" | "laptop" | "noSkills";
 
 export default function MakeMoneyPage() {
   const t = useTranslations("makeMoney");
+  const locale = useLocale();
   const [filter, setFilter] = useState<FilterType>("all");
 
   const filtered = methods.filter((m) => {

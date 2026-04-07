@@ -22,10 +22,11 @@ const platforms = [
     name: "Fiverr",
     logo: "F",
     color: "bg-green-500",
-    earningsRange: "$50-2000/mo",
+    earningsRange: "32,500-1,300,000 FCFA/mo (~$50-$2,000)",
     difficulty: "Easy",
     paysCameroon: true,
-    paymentMethod: "PayPal, Payoneer, Bank",
+    paymentMethod: "Payoneer, Bank Transfer, Crypto P2P",
+    cameroonPayment: "Payoneer to bank, or Crypto P2P to MoMo",
     commission: "20%",
     bestFor: "Beginners, quick gigs",
     rating: 4.5,
@@ -36,10 +37,11 @@ const platforms = [
     name: "Upwork",
     logo: "U",
     color: "bg-emerald-600",
-    earningsRange: "$100-5000/mo",
+    earningsRange: "65,000-3,250,000 FCFA/mo (~$100-$5,000)",
     difficulty: "Medium",
     paysCameroon: true,
-    paymentMethod: "PayPal, Payoneer, Wire",
+    paymentMethod: "Payoneer, Bank Transfer, Crypto P2P",
+    cameroonPayment: "Payoneer to bank, or direct wire transfer",
     commission: "10-20%",
     bestFor: "Long-term clients, higher rates",
     rating: 4.3,
@@ -50,10 +52,11 @@ const platforms = [
     name: "Freelancer.com",
     logo: "FL",
     color: "bg-blue-500",
-    earningsRange: "$50-1000/mo",
+    earningsRange: "32,500-650,000 FCFA/mo (~$50-$1,000)",
     difficulty: "Medium",
     paysCameroon: true,
-    paymentMethod: "PayPal, Skrill, Wire",
+    paymentMethod: "Payoneer, Bank Transfer, Crypto P2P",
+    cameroonPayment: "Payoneer to bank, or Crypto P2P to MoMo",
     commission: "10%",
     bestFor: "Contests, diverse projects",
     rating: 3.8,
@@ -64,10 +67,11 @@ const platforms = [
     name: "PeoplePerHour",
     logo: "PPH",
     color: "bg-orange-500",
-    earningsRange: "$100-2000/mo",
+    earningsRange: "65,000-1,300,000 FCFA/mo (~$100-$2,000)",
     difficulty: "Medium",
     paysCameroon: true,
-    paymentMethod: "PayPal, Payoneer",
+    paymentMethod: "Payoneer, Bank Transfer, Crypto P2P",
+    cameroonPayment: "Payoneer to bank account",
     commission: "20%",
     bestFor: "European clients, specialized work",
     rating: 3.9,
@@ -77,14 +81,14 @@ const platforms = [
 ];
 
 const skills = [
-  { name: "Data Entry", demand: "High", avgPay: "$5-15/hr", learnTime: "1 day", device: "Laptop" },
-  { name: "Social Media Management", demand: "High", avgPay: "$8-25/hr", learnTime: "1 week", device: "Phone/Laptop" },
-  { name: "Graphic Design (Canva)", demand: "High", avgPay: "$10-30/hr", learnTime: "1 week", device: "Laptop" },
-  { name: "Transcription", demand: "Medium", avgPay: "$5-20/hr", learnTime: "2 days", device: "Laptop" },
-  { name: "Virtual Assistant", demand: "High", avgPay: "$8-20/hr", learnTime: "3 days", device: "Laptop" },
-  { name: "Content Writing", demand: "High", avgPay: "$10-40/hr", learnTime: "1 week", device: "Laptop" },
-  { name: "Video Editing", demand: "Medium", avgPay: "$15-50/hr", learnTime: "2 weeks", device: "Laptop" },
-  { name: "Translation (EN/FR)", demand: "High", avgPay: "$10-30/hr", learnTime: "None", device: "Phone/Laptop" },
+  { name: "Data Entry", demand: "High", avgPay: "3,250-9,750 FCFA/hr (~$5-$15)", learnTime: "1 day", device: "Laptop" },
+  { name: "Social Media Management", demand: "High", avgPay: "5,200-16,250 FCFA/hr (~$8-$25)", learnTime: "1 week", device: "Phone/Laptop" },
+  { name: "Graphic Design (Canva)", demand: "High", avgPay: "6,500-19,500 FCFA/hr (~$10-$30)", learnTime: "1 week", device: "Laptop" },
+  { name: "Transcription", demand: "Medium", avgPay: "3,250-13,000 FCFA/hr (~$5-$20)", learnTime: "2 days", device: "Laptop" },
+  { name: "Virtual Assistant", demand: "High", avgPay: "5,200-13,000 FCFA/hr (~$8-$20)", learnTime: "3 days", device: "Laptop" },
+  { name: "Content Writing", demand: "High", avgPay: "6,500-26,000 FCFA/hr (~$10-$40)", learnTime: "1 week", device: "Laptop" },
+  { name: "Video Editing", demand: "Medium", avgPay: "9,750-32,500 FCFA/hr (~$15-$50)", learnTime: "2 weeks", device: "Laptop" },
+  { name: "Translation (EN/FR)", demand: "High", avgPay: "6,500-19,500 FCFA/hr (~$10-$30)", learnTime: "None", device: "Phone/Laptop" },
 ];
 
 export default function FreelancingPage() {
@@ -164,6 +168,9 @@ export default function FreelancingPage() {
                 <p className="text-[11px] text-text-dim">{p.difficulty} · {p.earningsRange}</p>
               </div>
             </div>
+            <p className="text-[11px] text-text-dim mb-2">
+              <span className="font-medium text-text-muted">CM Payment:</span> {p.cameroonPayment}
+            </p>
             <div className="space-y-1.5 mb-3">
               {p.pros.map((pro, j) => (
                 <div key={j} className="flex items-center gap-2">
