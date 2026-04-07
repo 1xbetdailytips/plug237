@@ -1,10 +1,10 @@
 FROM node:20-alpine AS base
 
-# Install dependencies only when needed
+# Install dependencies
 FROM base AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci --omit=dev
+RUN npm ci
 
 # Build the application
 FROM base AS builder
@@ -12,7 +12,6 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
-ENV NODE_OPTIONS="--max-old-space-size=512"
 RUN npm run build
 
 # Production image
