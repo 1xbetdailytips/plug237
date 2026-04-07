@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/config";
 import { blogPosts } from "@/data/blog-posts";
+import { methodSlugs } from "@/data/methods";
 
 const routes = [
   "",
@@ -47,6 +48,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${siteConfig.url}/${locale}${route}`,
         lastModified: new Date(post.datePublished),
+        changeFrequency: "monthly",
+        priority: 0.7,
+        alternates: {
+          languages: {
+            en: `${siteConfig.url}/en${route}`,
+            fr: `${siteConfig.url}/fr${route}`,
+            "x-default": `${siteConfig.url}/en${route}`,
+          },
+        },
+      });
+    }
+  }
+
+  // Method detail page URLs
+  for (const slug of methodSlugs) {
+    for (const locale of siteConfig.locales) {
+      const route = `/make-money/${slug}`;
+      entries.push({
+        url: `${siteConfig.url}/${locale}${route}`,
+        lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.7,
         alternates: {
