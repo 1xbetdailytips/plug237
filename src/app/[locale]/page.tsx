@@ -1,4 +1,7 @@
-import { getTranslations } from "next-intl/server";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 import {
   ArrowRight,
   BookOpen,
@@ -81,13 +84,9 @@ const latestModules = [
   },
 ];
 
-export default async function HomePage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  const t = await getTranslations("home");
+export default function HomePage() {
+  const { locale } = useParams() as { locale: string };
+  const t = useTranslations("home");
 
   return (
     <div className="max-w-4xl space-y-6">
