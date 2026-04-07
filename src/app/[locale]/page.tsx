@@ -1,22 +1,20 @@
 import { useTranslations } from "next-intl";
 import {
   ArrowRight,
-  Users,
+  BookOpen,
   Target,
-  DollarSign,
-  TrendingUp,
+  Gift,
   Smartphone,
   Laptop,
   Zap,
   Clock,
-  Star,
 } from "lucide-react";
 import Link from "next/link";
 
 const topMethods = [
   {
     title: "WhatsApp Status Business",
-    earnings: "$50-300/mo",
+    earnings: "30,000-195,000 FCFA/mois",
     difficulty: "Easy",
     device: "phone",
     tag: "HOT",
@@ -24,7 +22,7 @@ const topMethods = [
   },
   {
     title: "Fiverr Data Entry",
-    earnings: "$100-500/mo",
+    earnings: "65,000-325,000 FCFA/mois",
     difficulty: "Easy",
     device: "laptop",
     tag: "POPULAR",
@@ -32,7 +30,7 @@ const topMethods = [
   },
   {
     title: "TikTok Creativity Program",
-    earnings: "$200-1000/mo",
+    earnings: "130,000-650,000 FCFA/mois",
     difficulty: "Medium",
     device: "phone",
     tag: "NEW",
@@ -40,19 +38,19 @@ const topMethods = [
   },
   {
     title: "Upwork Virtual Assistant",
-    earnings: "$300-800/mo",
+    earnings: "195,000-520,000 FCFA/mois",
     difficulty: "Medium",
     device: "laptop",
     tag: "POPULAR",
     href: "/freelancing",
   },
   {
-    title: "Transcription Jobs",
-    earnings: "$150-400/mo",
+    title: "Remotasks Data Labeling",
+    earnings: "40,000-130,000 FCFA/mois",
     difficulty: "Easy",
-    device: "laptop",
+    device: "phone",
     tag: null,
-    href: "/remote-jobs",
+    href: "/make-money",
   },
 ];
 
@@ -64,10 +62,10 @@ const latestModules = [
     href: "/freelancing",
   },
   {
-    title: "MTN MoMo Cashout: Receive International Payments",
-    category: "Resources",
+    title: "MTN MoMo: Receive International Payments in FCFA",
+    category: "Payments",
     time: "8 min",
-    href: "/resources",
+    href: "/payment-guides",
   },
   {
     title: "Start Earning with Your Phone — No Laptop Needed",
@@ -76,18 +74,19 @@ const latestModules = [
     href: "/make-money",
   },
   {
-    title: "Remote Jobs Hiring from Cameroon This Week",
+    title: "Remote Job Platforms Hiring Cameroonians in 2026",
     category: "Remote Jobs",
     time: "5 min",
     href: "/remote-jobs",
   },
 ];
 
-export default function HomePage({
+export default async function HomePage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   const t = useTranslations("home");
 
   return (
@@ -106,14 +105,14 @@ export default function HomePage({
         </p>
         <div className="flex flex-wrap gap-2">
           <Link
-            href="/en/start-here"
+            href={`/${locale}/start-here`}
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent text-black text-sm font-semibold hover:bg-accent-hover transition-colors"
           >
             {t("getStarted")}
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
-            href="/en/make-money"
+            href={`/${locale}/make-money`}
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border text-sm font-medium text-text-muted hover:text-text hover:border-border-light transition-colors"
           >
             {t("viewAll")}
@@ -121,13 +120,13 @@ export default function HomePage({
         </div>
       </div>
 
-      {/* Stats Row */}
+      {/* Value Props Row (replacing fake stats) */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {[
-          { icon: Users, label: t("activeUsers"), value: "2,400+", color: "text-info" },
-          { icon: Target, label: t("methodsTested"), value: "35+", color: "text-accent" },
-          { icon: DollarSign, label: t("avgEarnings"), value: "$85", color: "text-success" },
-          { icon: TrendingUp, label: t("successRate"), value: "73%", color: "text-accent" },
+          { icon: BookOpen, label: "Verified Methods", value: "30+", color: "text-info" },
+          { icon: Target, label: "Cameroon-Tailored", value: "100%", color: "text-accent" },
+          { icon: Gift, label: "Always Free", value: "0 FCFA", color: "text-success" },
+          { icon: Smartphone, label: "Phone & Laptop", value: "Both", color: "text-accent" },
         ].map((stat, i) => (
           <div
             key={i}
@@ -145,7 +144,7 @@ export default function HomePage({
         <div className="flex items-center justify-between px-4 py-3 border-b border-border">
           <h2 className="text-sm font-semibold text-text">{t("topMethods")}</h2>
           <Link
-            href="/en/make-money"
+            href={`/${locale}/make-money`}
             className="text-[12px] text-accent hover:text-accent-hover transition-colors"
           >
             {t("viewAll")} →
@@ -155,7 +154,7 @@ export default function HomePage({
           {topMethods.map((method, i) => (
             <Link
               key={i}
-              href={`/en${method.href}`}
+              href={`/${locale}${method.href}`}
               className="flex items-center gap-4 px-4 py-3 hover:bg-bg-hover transition-colors group"
             >
               <div className="w-8 h-8 rounded-lg bg-bg-elevated flex items-center justify-center flex-shrink-0">
@@ -208,7 +207,7 @@ export default function HomePage({
           {latestModules.map((mod, i) => (
             <Link
               key={i}
-              href={`/en${mod.href}`}
+              href={`/${locale}${mod.href}`}
               className="rounded-lg border border-border bg-bg-surface p-4 hover:border-border-light hover:bg-bg-hover transition-all group"
             >
               <div className="flex items-center gap-2 mb-2">

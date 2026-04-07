@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { MessageCircle, Send, ArrowRight, TrendingUp, Zap } from "lucide-react";
+import { Send, TrendingUp, Zap } from "lucide-react";
 
 export default function RightPanel() {
   const t = useTranslations("cta");
@@ -36,16 +36,15 @@ export default function RightPanel() {
         <p className="text-[11px] text-text-dim leading-relaxed mb-3">
           {t("joinDesc")}
         </p>
-        <div className="space-y-1.5">
-          <button className="w-full flex items-center justify-center gap-1.5 py-1.5 rounded-md bg-[#0088cc] text-white text-[11px] font-semibold hover:bg-[#0077b5] transition-colors">
-            <Send className="w-3 h-3" />
-            {t("telegram")}
-          </button>
-          <button className="w-full flex items-center justify-center gap-1.5 py-1.5 rounded-md bg-[#25D366] text-white text-[11px] font-semibold hover:bg-[#20bd5a] transition-colors">
-            <MessageCircle className="w-3 h-3" />
-            {t("whatsapp")}
-          </button>
-        </div>
+        <a
+          href="https://t.me/weplug237"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full flex items-center justify-center gap-1.5 py-1.5 rounded-md bg-[#0088cc] text-white text-[11px] font-semibold hover:bg-[#0077b5] transition-colors"
+        >
+          <Send className="w-3 h-3" />
+          {t("telegram")}
+        </a>
       </div>
 
       {/* Trending */}
@@ -80,26 +79,6 @@ export default function RightPanel() {
               </span>
             </button>
           ))}
-        </div>
-      </div>
-
-      {/* Email Capture */}
-      <div className="rounded-lg border border-border p-3">
-        <h3 className="text-[12px] font-semibold text-text mb-1">
-          Weekly Money Tips
-        </h3>
-        <p className="text-[11px] text-text-dim mb-2">
-          Get methods that work, straight to your inbox.
-        </p>
-        <div className="flex gap-1.5">
-          <input
-            type="email"
-            placeholder="Email"
-            className="flex-1 px-2.5 py-1.5 rounded-md bg-bg-elevated border border-border text-[11px] text-text placeholder:text-text-dim outline-none focus:border-accent/40 transition-colors"
-          />
-          <button className="px-2 py-1.5 rounded-md bg-accent text-black hover:bg-accent-hover transition-colors">
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
         </div>
       </div>
     </aside>

@@ -99,14 +99,17 @@ export default function Sidebar({ locale }: { locale: string }) {
         <div className="p-3 border-t border-border">
           <div className="rounded-lg bg-accent-dim p-3">
             <p className="text-[11px] font-semibold text-accent mb-1">
-              FREE GUIDE
+              FREE RESOURCES
             </p>
             <p className="text-[11px] text-text-dim leading-relaxed mb-2">
-              Download: &quot;First $100 Online from Cameroon&quot;
+              Guides, templates &amp; checklists for Cameroonians
             </p>
-            <button className="w-full py-1.5 rounded-md bg-accent text-black text-[11px] font-semibold hover:bg-accent-hover transition-colors">
-              Download PDF
-            </button>
+            <Link
+              href={`/${locale}/resources`}
+              className="w-full block text-center py-1.5 rounded-md bg-accent text-black text-[11px] font-semibold hover:bg-accent-hover transition-colors"
+            >
+              View Resources
+            </Link>
           </div>
         </div>
       )}

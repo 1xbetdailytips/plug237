@@ -50,9 +50,14 @@ export default function TopBar({ locale }: { locale: string }) {
         </Link>
 
         {/* Join CTA */}
-        <button className="px-3 py-1.5 rounded-md bg-accent text-black text-[12px] font-semibold hover:bg-accent-hover transition-colors">
-          Join Free
-        </button>
+        <a
+          href="https://t.me/weplug237"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-3 py-1.5 rounded-md bg-accent text-black text-[12px] font-semibold hover:bg-accent-hover transition-colors"
+        >
+          Join Community
+        </a>
       </div>
     </header>
   );

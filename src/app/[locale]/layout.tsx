@@ -10,7 +10,6 @@ import TopBar from "@/components/layout/TopBar";
 import RightPanel from "@/components/layout/RightPanel";
 import MobileNav from "@/components/layout/MobileNav";
 import StickyButtons from "@/components/ui/StickyButtons";
-import LeadPopup from "@/components/ui/LeadPopup";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -92,7 +91,6 @@ export default async function LocaleLayout({
           </div>
 
           <StickyButtons />
-          <LeadPopup />
 
           {/* Mobile Layout */}
           <div className="lg:hidden flex flex-col min-h-screen">
