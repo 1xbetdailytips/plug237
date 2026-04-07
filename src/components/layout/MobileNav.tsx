@@ -15,6 +15,7 @@ import {
   BookOpen,
   Zap,
   Wallet,
+  FileText,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -27,6 +28,7 @@ const navItems = [
   { key: "paymentGuides", href: "/payment-guides", icon: Wallet },
   { key: "tools", href: "/tools", icon: Wrench },
   { key: "resources", href: "/resources", icon: BookOpen },
+  { key: "blog", href: "/blog", icon: FileText },
 ];
 
 export default function MobileNav({ locale }: { locale: string }) {
