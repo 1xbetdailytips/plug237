@@ -1,25 +1,33 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg: #0f0f14;
-  --color-bg-surface: #16161e;
-  --color-bg-elevated: #1e1e28;
-  --color-bg-hover: #24242f;
-  --color-border: #2a2a36;
-  --color-border-light: #353542;
-  --color-text: #e4e4e7;
-  --color-text-muted: #a1a1aa;
-  --color-text-dim: #71717a;
+  /* ── Surface & Background ── */
+  --color-bg: #0c0c12;
+  --color-bg-surface: #151520;
+  --color-bg-elevated: #1c1c2a;
+  --color-bg-hover: #222232;
+  --color-border: #2a2a3a;
+  --color-border-light: #38384a;
+
+  /* ── Text (improved contrast) ── */
+  --color-text: #e8e8ec;
+  --color-text-muted: #b0b0ba;
+  --color-text-dim: #85859a;
+
+  /* ── Accent & Semantic ── */
   --color-accent: #f59e0b;
   --color-accent-hover: #d97706;
-  --color-accent-dim: rgba(245, 158, 11, 0.12);
+  --color-accent-dim: rgba(245, 158, 11, 0.10);
   --color-success: #22c55e;
   --color-error: #ef4444;
   --color-info: #3b82f6;
+
+  /* ── Typography ── */
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 }
 
+/* ── Scrollbar ── */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--color-border) transparent;
@@ -46,7 +54,7 @@ body {
   color: #fff;
 }
 
-/* Skeleton loader animation */
+/* ── Skeleton Loader ── */
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
@@ -59,19 +67,62 @@ body {
   border-radius: 6px;
 }
 
-/* Smooth transitions */
+/* ── Smooth Transitions ── */
 .transition-panel {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Badge styles */
+/* ── Badge Styles ── */
 .badge {
   display: inline-flex;
   align-items: center;
   padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 11px;
+  border-radius: 5px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+/* ── Card Hover Glow ── */
+.card-glow {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.card-glow:hover {
+  border-color: var(--color-border-light);
+  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.06), 0 4px 16px -4px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Section Header Accent Line ── */
+.section-accent {
+  position: relative;
+  padding-left: 12px;
+}
+.section-accent::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  bottom: 2px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--color-accent);
+}
+
+/* ── Method Card Left Border Accent ── */
+.method-border-hot { border-left: 3px solid var(--color-error); }
+.method-border-new { border-left: 3px solid var(--color-info); }
+.method-border-popular { border-left: 3px solid var(--color-accent); }
+.method-border-default { border-left: 3px solid var(--color-border-light); }
+
+/* ── Smooth link transitions ── */
+a, button {
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; }
+  .transition-panel { transition: none; }
+  .card-glow { transition: none; }
 }

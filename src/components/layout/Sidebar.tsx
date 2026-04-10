@@ -78,9 +78,9 @@ export default function Sidebar({ locale }: { locale: string }) {
             <Link
               key={item.key}
               href={`/${locale}${item.href}`}
-              className={`flex items-center gap-2.5 px-2.5 py-[7px] rounded-md text-[13px] font-medium transition-all duration-150 group ${
+              className={`flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-[13px] font-medium transition-all duration-150 group ${
                 active
-                  ? "bg-accent-dim text-accent"
+                  ? "bg-accent-dim text-accent shadow-[inset_0_0_0_1px_rgba(245,158,11,0.15)]"
                   : "text-text-dim hover:text-text hover:bg-bg-hover"
               }`}
               title={collapsed ? t(item.key) : undefined}

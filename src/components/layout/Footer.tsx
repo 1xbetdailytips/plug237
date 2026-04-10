@@ -27,7 +27,8 @@ export default function Footer({ locale }: { locale: string }) {
   ];
 
   return (
-    <footer className="border-t border-border bg-bg-surface/50 mt-12">
+    <footer className="border-t border-border bg-bg-surface/50 mt-12 relative">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
       <div className="max-w-6xl mx-auto px-4 py-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand */}

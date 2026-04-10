@@ -75,13 +75,14 @@ export default function StartHerePage() {
       </div>
 
       {/* Progress Bar */}
-      <div className="rounded-lg border border-border bg-bg-surface p-4">
+      <div className="rounded-lg border border-border bg-bg-surface p-4 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent/60 via-accent/20 to-transparent" />
         <div className="flex items-center justify-between mb-2">
           <span className="text-[12px] font-semibold text-text">Your Progress</span>
-          <span className="text-[12px] text-accent font-semibold">0 / 6 Steps</span>
+          <span className="text-[12px] text-accent font-semibold tabular-nums">0 / 6 Steps</span>
         </div>
-        <div className="h-1.5 rounded-full bg-bg-elevated overflow-hidden">
-          <div className="h-full w-0 rounded-full bg-accent transition-all duration-500" />
+        <div className="h-2 rounded-full bg-bg-elevated overflow-hidden">
+          <div className="h-full w-0 rounded-full bg-gradient-to-r from-accent to-accent-hover transition-all duration-500" />
         </div>
       </div>
 

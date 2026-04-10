@@ -7,7 +7,7 @@ export default function RightPanel() {
   const t = useTranslations("cta");
 
   return (
-    <aside className="hidden xl:flex flex-col w-[260px] border-l border-border bg-bg-surface/50 p-4 gap-4 overflow-y-auto">
+    <aside className="hidden xl:flex flex-col w-[260px] border-l border-border bg-bg-surface/30 p-4 gap-4 overflow-y-auto">
       {/* Quick Tips */}
       <div className="rounded-lg border border-border p-3">
         <div className="flex items-center gap-2 mb-3">

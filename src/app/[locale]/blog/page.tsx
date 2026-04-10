@@ -148,7 +148,17 @@ export default async function BlogPage({
               className="rounded-lg border border-border bg-bg-surface p-4 hover:border-accent/30 hover:bg-bg-hover transition-all group"
             >
               <div className="flex items-center gap-2 mb-2">
-                <span className="badge bg-bg-elevated text-text-dim">
+                <span className={`badge ${
+                  post.category === "MAKE MONEY" || post.category === "Make Money"
+                    ? "bg-success/15 text-success"
+                    : post.category === "PAYMENTS" || post.category === "Payments"
+                    ? "bg-accent/15 text-accent"
+                    : post.category === "REMOTE JOBS" || post.category === "Remote Jobs"
+                    ? "bg-info/15 text-info"
+                    : post.category === "FREELANCING" || post.category === "Freelancing"
+                    ? "bg-error/15 text-error"
+                    : "bg-bg-elevated text-text-dim"
+                }`}>
                   {post.category}
                 </span>
                 <span className="flex items-center gap-1 text-[11px] text-text-dim">

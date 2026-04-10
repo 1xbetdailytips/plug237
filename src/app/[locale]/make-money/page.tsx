@@ -42,7 +42,13 @@ export default function MakeMoneyPage() {
     <div className="max-w-4xl space-y-5">
       {/* Header */}
       <div>
-        <h1 className="text-xl font-bold text-text">{t("title")}</h1>
+        <div className="flex items-center gap-2 mb-1">
+          <DollarSign className="w-5 h-5 text-success" />
+          <span className="badge bg-success/15 text-success">
+            {isEn ? "EARN MONEY" : "GAGNER"}
+          </span>
+        </div>
+        <h1 className="text-xl font-bold text-text mt-2">{t("title")}</h1>
         <p className="text-sm text-text-muted mt-1">{t("subtitle")}</p>
       </div>
 
@@ -73,7 +79,12 @@ export default function MakeMoneyPage() {
           <Link
             key={i}
             href={`/${locale}/make-money/${method.slug}`}
-            className="block p-4 hover:bg-bg-hover transition-colors group"
+            className={`block p-4 hover:bg-bg-hover transition-colors group ${
+              method.tag === "HOT" ? "method-border-hot"
+              : method.tag === "NEW" ? "method-border-new"
+              : method.tag === "POPULAR" ? "method-border-popular"
+              : "method-border-default"
+            }`}
           >
             <div className="flex items-start gap-3">
               <div className="w-9 h-9 rounded-lg bg-bg-elevated flex items-center justify-center flex-shrink-0 mt-0.5">

@@ -11,6 +11,7 @@ import {
   Laptop,
   Zap,
   Clock,
+  TrendingUp,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -63,24 +64,32 @@ const latestModules = [
     category: "Freelancing",
     time: "12 min",
     href: "/freelancing",
+    color: "text-info",
+    bgColor: "bg-info/10",
   },
   {
     title: "MTN MoMo: Receive International Payments in FCFA",
     category: "Payments",
     time: "8 min",
     href: "/payment-guides",
+    color: "text-success",
+    bgColor: "bg-success/10",
   },
   {
     title: "Start Earning with Your Phone — No Laptop Needed",
     category: "Make Money",
     time: "15 min",
     href: "/make-money",
+    color: "text-accent",
+    bgColor: "bg-accent/10",
   },
   {
     title: "Remote Job Platforms Hiring Cameroonians in 2026",
     category: "Remote Jobs",
     time: "5 min",
     href: "/remote-jobs",
+    color: "text-error",
+    bgColor: "bg-error/10",
   },
 ];
 
@@ -91,49 +100,56 @@ export default function HomePage() {
   return (
     <div className="max-w-4xl space-y-6">
       {/* Hero Section */}
-      <div className="rounded-xl border border-border bg-bg-surface p-6">
-        <div className="flex items-center gap-2 mb-1">
-          <Zap className="w-5 h-5 text-accent" />
-          <span className="badge bg-accent/15 text-accent">SYSTEM v1.0</span>
+      <div className="rounded-xl border border-border bg-bg-surface p-6 relative overflow-hidden">
+        {/* Subtle gradient accent */}
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent/60 via-accent/20 to-transparent" />
+
+        <div className="flex items-center gap-2 mb-2">
+          <TrendingUp className="w-5 h-5 text-accent" />
+          <span className="badge bg-accent/15 text-accent">
+            {locale === "en" ? "FREE PLATFORM" : "PLATEFORME GRATUITE"}
+          </span>
         </div>
-        <h1 className="text-2xl font-bold text-text mt-2 mb-1">
+        <h1 className="text-2xl font-bold text-text mt-2 mb-1.5">
           {t("welcome")}
         </h1>
-        <p className="text-sm text-text-muted max-w-lg mb-5">
+        <p className="text-sm text-text-muted max-w-lg mb-5 leading-relaxed">
           {t("subtitle")}
         </p>
         <div className="flex flex-wrap gap-2">
           <Link
             href={`/${locale}/start-here`}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent text-black text-sm font-semibold hover:bg-accent-hover transition-colors"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg bg-accent text-black text-sm font-semibold hover:bg-accent-hover transition-colors shadow-sm shadow-accent/20"
           >
             {t("getStarted")}
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
             href={`/${locale}/make-money`}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border text-sm font-medium text-text-muted hover:text-text hover:border-border-light transition-colors"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg border border-border text-sm font-medium text-text-muted hover:text-text hover:border-border-light transition-colors"
           >
             {t("viewAll")}
           </Link>
         </div>
       </div>
 
-      {/* Value Props Row (replacing fake stats) */}
+      {/* Value Props Row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {[
-          { icon: BookOpen, label: "Verified Methods", value: "30+", color: "text-info" },
-          { icon: Target, label: "Cameroon-Tailored", value: "100%", color: "text-accent" },
-          { icon: Gift, label: "Always Free", value: "0 FCFA", color: "text-success" },
-          { icon: Smartphone, label: "Phone & Laptop", value: "Both", color: "text-accent" },
+          { icon: BookOpen, label: "Verified Methods", value: "30+", color: "text-info", borderColor: "border-info/20" },
+          { icon: Target, label: "Cameroon-Tailored", value: "100%", color: "text-accent", borderColor: "border-accent/20" },
+          { icon: Gift, label: "Always Free", value: "0 FCFA", color: "text-success", borderColor: "border-success/20" },
+          { icon: Smartphone, label: "Phone & Laptop", value: "Both", color: "text-accent", borderColor: "border-accent/20" },
         ].map((stat, i) => (
           <div
             key={i}
-            className="rounded-lg border border-border bg-bg-surface p-3.5"
+            className={`rounded-lg border bg-bg-surface p-3.5 card-glow ${stat.borderColor}`}
           >
-            <stat.icon className={`w-4 h-4 ${stat.color} mb-2`} />
+            <div className={`w-8 h-8 rounded-lg bg-bg-elevated flex items-center justify-center mb-2.5`}>
+              <stat.icon className={`w-4 h-4 ${stat.color}`} />
+            </div>
             <p className="text-lg font-bold text-text">{stat.value}</p>
-            <p className="text-[11px] text-text-dim">{stat.label}</p>
+            <p className="text-[12px] text-text-dim mt-0.5">{stat.label}</p>
           </div>
         ))}
       </div>
@@ -141,10 +157,10 @@ export default function HomePage() {
       {/* Top Methods */}
       <div className="rounded-xl border border-border bg-bg-surface overflow-hidden">
         <div className="flex items-center justify-between px-4 py-3 border-b border-border">
-          <h2 className="text-sm font-semibold text-text">{t("topMethods")}</h2>
+          <h2 className="text-sm font-semibold text-text section-accent">{t("topMethods")}</h2>
           <Link
             href={`/${locale}/make-money`}
-            className="text-[12px] text-accent hover:text-accent-hover transition-colors"
+            className="text-[12px] text-accent hover:text-accent-hover transition-colors font-medium"
           >
             {t("viewAll")} →
           </Link>
@@ -154,9 +170,14 @@ export default function HomePage() {
             <Link
               key={i}
               href={`/${locale}${method.href}`}
-              className="flex items-center gap-4 px-4 py-3 hover:bg-bg-hover transition-colors group"
+              className={`flex items-center gap-4 px-4 py-3.5 hover:bg-bg-hover transition-colors group ${
+                method.tag === "HOT" ? "method-border-hot"
+                : method.tag === "NEW" ? "method-border-new"
+                : method.tag === "POPULAR" ? "method-border-popular"
+                : "method-border-default"
+              }`}
             >
-              <div className="w-8 h-8 rounded-lg bg-bg-elevated flex items-center justify-center flex-shrink-0">
+              <div className="w-9 h-9 rounded-lg bg-bg-elevated flex items-center justify-center flex-shrink-0">
                 {method.device === "phone" ? (
                   <Smartphone className="w-4 h-4 text-text-dim" />
                 ) : (
@@ -182,12 +203,12 @@ export default function HomePage() {
                     </span>
                   )}
                 </div>
-                <p className="text-[11px] text-text-dim mt-0.5">
+                <p className="text-[12px] text-text-dim mt-0.5">
                   {method.difficulty} · {method.device === "phone" ? "Phone" : "Laptop"}
                 </p>
               </div>
               <div className="text-right flex-shrink-0">
-                <p className="text-[13px] font-semibold text-success">
+                <p className="text-[13px] font-semibold text-success tabular-nums">
                   {method.earnings}
                 </p>
               </div>
@@ -199,7 +220,7 @@ export default function HomePage() {
 
       {/* Latest Modules */}
       <div>
-        <h2 className="text-sm font-semibold text-text mb-3">
+        <h2 className="text-sm font-semibold text-text mb-3 section-accent">
           {t("latestModules")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -207,10 +228,10 @@ export default function HomePage() {
             <Link
               key={i}
               href={`/${locale}${mod.href}`}
-              className="rounded-lg border border-border bg-bg-surface p-4 hover:border-border-light hover:bg-bg-hover transition-all group"
+              className="rounded-lg border border-border bg-bg-surface p-4 card-glow group"
             >
-              <div className="flex items-center gap-2 mb-2">
-                <span className="badge bg-bg-elevated text-text-dim">
+              <div className="flex items-center gap-2 mb-2.5">
+                <span className={`badge ${mod.bgColor} ${mod.color}`}>
                   {mod.category}
                 </span>
                 <span className="flex items-center gap-1 text-[11px] text-text-dim">

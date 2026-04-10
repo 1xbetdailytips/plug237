@@ -14,7 +14,7 @@ export default function TopBar({ locale }: { locale: string }) {
   const switchPath = pathname.replace(`/${locale}`, `/${otherLocale}`);
 
   return (
-    <header className="h-[52px] border-b border-border bg-bg-surface/80 backdrop-blur-md flex items-center justify-between px-4 sticky top-0 z-30">
+    <header className="h-[52px] border-b border-border bg-bg-surface/90 backdrop-blur-xl flex items-center justify-between px-4 sticky top-0 z-30">
       {/* Search */}
       <div className="flex items-center gap-2 flex-1 max-w-md">
         <div
