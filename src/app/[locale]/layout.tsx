@@ -11,6 +11,7 @@ import RightPanel from "@/components/layout/RightPanel";
 import MobileNav from "@/components/layout/MobileNav";
 import StickyButtons from "@/components/ui/StickyButtons";
 import Footer from "@/components/layout/Footer";
+import { inter, jetbrainsMono } from "@/app/layout";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -68,7 +69,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="h-full antialiased">
+    <html lang={locale} className={`h-full antialiased ${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <script
           type="application/ld+json"

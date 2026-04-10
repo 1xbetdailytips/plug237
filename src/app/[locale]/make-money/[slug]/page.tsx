@@ -115,24 +115,28 @@ export default async function MethodDetailPage({
     .map((s) => methods.find((m) => m.slug === s))
     .filter(Boolean) as typeof methods;
 
-  // Schema.org JSON-LD
-  const howToSchema = {
+  // Schema.org JSON-LD — Article (HowTo deprecated by Google Sept 2023)
+  const guideArticleSchema = {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: title,
+    "@type": "Article",
+    headline: title,
     description: desc,
-    totalTime: `PT${lang.steps.length * 30}M`,
-    estimatedCost: {
-      "@type": "MonetaryAmount",
-      currency: "XAF",
-      value: "0",
+    url: `${siteConfig.url}/${locale}/make-money/${slug}`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${siteConfig.url}/${locale}/make-money/${slug}` },
+    datePublished: "2026-04-07",
+    dateModified: "2026-04-09",
+    inLanguage: isEn ? "en" : "fr",
+    author: {
+      "@type": "Person",
+      name: "PLUG237 Team",
+      url: `${siteConfig.url}/${locale}/about`,
     },
-    step: lang.steps.map((step, i) => ({
-      "@type": "HowToStep",
-      position: i + 1,
-      name: step.title,
-      text: step.description,
-    })),
+    publisher: {
+      "@type": "Organization",
+      name: "PLUG237",
+      url: siteConfig.url,
+      logo: { "@type": "ImageObject", url: `${siteConfig.url}/logo.png`, width: 512, height: 512 },
+    },
   };
 
   const faqSchema = {
@@ -178,7 +182,7 @@ export default async function MethodDetailPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([howToSchema, faqSchema, breadcrumbSchema]),
+          __html: JSON.stringify([guideArticleSchema, faqSchema, breadcrumbSchema]),
         }}
       />
 

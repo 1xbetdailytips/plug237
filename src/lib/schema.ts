@@ -1,13 +1,27 @@
 import { siteConfig } from "./config";
 
+const LOGO = {
+  "@type": "ImageObject" as const,
+  url: `${siteConfig.url}/logo.png`,
+  width: 512,
+  height: 512,
+};
+
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
+    logo: LOGO,
     description: "Step-by-step platform to earn money online from Cameroon",
     sameAs: ["https://t.me/weplug237"],
+    foundingDate: "2026",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      url: "https://t.me/weplug237",
+    },
   };
 }
 
@@ -17,11 +31,6 @@ export function websiteSchema() {
     "@type": "WebSite",
     name: siteConfig.name,
     url: siteConfig.url,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${siteConfig.url}/en?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 
@@ -72,38 +81,21 @@ export function articleSchema(opts: {
     headline: opts.title,
     description: opts.description,
     url: opts.url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": opts.url },
     datePublished: opts.datePublished,
     dateModified: opts.dateModified || opts.datePublished,
     image: opts.image || `${siteConfig.url}/og/default.png`,
-    inLanguage: opts.locale === "fr" ? "fr-CM" : "en-CM",
+    inLanguage: opts.locale === "fr" ? "fr" : "en",
     author: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
+      "@type": "Person",
+      name: "PLUG237 Team",
+      url: `${siteConfig.url}/${opts.locale}/about`,
     },
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
       url: siteConfig.url,
+      logo: LOGO,
     },
-  };
-}
-
-export function howToSchema(
-  name: string,
-  description: string,
-  steps: { name: string; text: string }[]
-) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name,
-    description,
-    step: steps.map((s, i) => ({
-      "@type": "HowToStep",
-      position: i + 1,
-      name: s.name,
-      text: s.text,
-    })),
   };
 }
