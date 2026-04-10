@@ -51,8 +51,9 @@ export async function generateMetadata({
       alternateLocale: isEn ? "fr_CM" : "en_CM",
       type: "article",
       publishedTime: post.datePublished,
+      images: [{ url: `${siteConfig.url}${post.image}`, width: 1200, height: 630, alt: title }],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: [`${siteConfig.url}${post.image}`] },
     robots: { index: true, follow: true },
   };
 }
@@ -132,6 +133,7 @@ export default async function BlogPostPage({
               description: isEn ? post.descEn : post.descFr,
               url: `${siteConfig.url}/${locale}/blog/${slug}`,
               datePublished: post.datePublished,
+              image: `${siteConfig.url}${post.image}`,
               locale,
             })
           ),

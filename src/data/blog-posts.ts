@@ -8,6 +8,7 @@ export type BlogPost = {
   datePublished: string;
   readTime: string;
   tags: string[];
+  image: string;
 };
 
 export const blogPosts: BlogPost[] = [
@@ -23,6 +24,7 @@ export const blogPosts: BlogPost[] = [
     datePublished: "2026-04-01",
     readTime: "10 min",
     tags: ["phone", "mobile money", "cameroon", "side hustle"],
+    image: "/og/earn-money-phone-cameroon.jpg",
   },
   {
     slug: "top-10-sites-mobile-money-cameroon",
@@ -36,6 +38,7 @@ export const blogPosts: BlogPost[] = [
     datePublished: "2026-04-02",
     readTime: "12 min",
     tags: ["mobile money", "mtn momo", "orange money", "online earning"],
+    image: "/og/top-10-sites-mobile-money-cameroon.jpg",
   },
   {
     slug: "freelancer-guide-cameroon",
@@ -49,6 +52,7 @@ export const blogPosts: BlogPost[] = [
     datePublished: "2026-04-03",
     readTime: "15 min",
     tags: ["freelancing", "fiverr", "upwork", "cameroon"],
+    image: "/og/freelancer-guide-cameroon.jpg",
   },
   {
     slug: "crypto-p2p-cameroon-binance",
@@ -62,6 +66,7 @@ export const blogPosts: BlogPost[] = [
     datePublished: "2026-04-04",
     readTime: "11 min",
     tags: ["crypto", "binance", "p2p", "usdt", "fcfa"],
+    image: "/og/crypto-p2p-cameroon-binance.jpg",
   },
   {
     slug: "online-jobs-no-degree-cameroon",
@@ -75,6 +80,7 @@ export const blogPosts: BlogPost[] = [
     datePublished: "2026-04-05",
     readTime: "13 min",
     tags: ["no degree", "remote jobs", "online jobs", "cameroon"],
+    image: "/og/online-jobs-no-degree-cameroon.jpg",
   },
   {
     slug: "mtn-momo-international-payments",
@@ -88,6 +94,7 @@ export const blogPosts: BlogPost[] = [
     datePublished: "2026-04-06",
     readTime: "9 min",
     tags: ["mtn momo", "payments", "freelancing", "international"],
+    image: "/og/mtn-momo-international-payments.jpg",
   },
   {
     slug: "tiktok-money-cameroon",
@@ -101,6 +108,7 @@ export const blogPosts: BlogPost[] = [
     datePublished: "2026-04-07",
     readTime: "14 min",
     tags: ["tiktok", "social media", "cameroon", "content creation"],
+    image: "/og/tiktok-money-cameroon.jpg",
   },
 ];
 
