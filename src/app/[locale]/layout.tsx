@@ -50,6 +50,9 @@ export async function generateMetadata({
       locale: locale === "fr" ? "fr_CM" : "en_CM",
     },
     robots: { index: true, follow: true },
+    verification: {
+      google: "Jii5Bvs8fuYrwfRNVHf_KB12Y27MKPbvMKFV_w-_RMc",
+    },
   };
 }
 
